@@ -1,0 +1,47 @@
+@charset "UTF-8";
+
+body {
+	background-color: #ffdfff;
+}
+
+table {
+	margin: 30px;
+}
+
+table {
+	border: 3px solid #a4a4ff;
+	border-collapse: seperate;
+	border-spacing: 2px;
+	background-color: #aaf2ea;
+}
+
+td {
+	background-color: #ebff8c;
+	border: 1px solid #a4a4ff;
+	padding: 6px;
+}
+
+.normal {
+	color: #006400;
+}
+
+.exceeded {
+	color: red;
+}
+
+dl {
+	background: none repeat scroll 0 0 #FAFAFA;
+	margin: 8px 0;
+	padding: 0;
+}
+
+dt {
+	display: inline-block;
+	width: 170px;
+}
+
+dd {
+	display: inline-block;
+	margin-left: 8px;
+	vertical-align: top;
+}

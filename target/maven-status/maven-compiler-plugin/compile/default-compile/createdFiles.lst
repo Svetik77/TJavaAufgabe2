@@ -1,0 +1,12 @@
+com\ch\essen\model\Meal.class
+com\ch\essen\model\MealWithExceed.class
+com\ch\essen\model\NamedEntity.class
+com\ch\essen\web\MealServlet.class
+com\ch\essen\model\Role.class
+com\ch\essen\util\MealsUtil.class
+com\ch\essen\repository\IUserRepository.class
+com\ch\essen\model\User.class
+com\ch\essen\repository\mock\InMemoryMealRepositoryImpl.class
+com\ch\essen\model\BaseEntity.class
+com\ch\essen\repository\IMealRepository.class
+com\ch\essen\util\DateTimeUtil.class
