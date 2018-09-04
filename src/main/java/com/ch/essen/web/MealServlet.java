@@ -54,6 +54,14 @@ public class MealServlet extends HttpServlet {
 			request.getRequestDispatcher(myMealsList).forward(request, response);
 		} else if (action.equals("delete")) {
 			// get id, with repository delete and stay on same page redirect
+			String id = request.getParameter("id");
+			Integer valueOfID = null;
+			if (id.isEmpty()) {
+				id = null;
+			} else {
+				valueOfID = Integer.valueOf(id);
+			}
+			repository.delete(valueOfID);
 			// <input type="hidden" name="id" value="${meal.id }">
 			// if in method Post id = null, its mean create new Meal
 		} else {
