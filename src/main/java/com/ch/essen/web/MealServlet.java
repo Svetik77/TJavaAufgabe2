@@ -19,7 +19,6 @@ import com.ch.essen.repository.IMealRepository;
 import com.ch.essen.repository.mock.InMemoryMealRepositoryImpl;
 import com.ch.essen.util.MealsUtil;
 
- 
 @WebServlet("/Meals")
 public class MealServlet extends HttpServlet {
 
@@ -99,25 +98,29 @@ public class MealServlet extends HttpServlet {
 		try {
 			valCalories = Integer.valueOf(request.getParameter("calories"));
 		} catch (Exception e) {
-			System.out.println(request.getParameter("calories") + " <--- not a number, forward to ----> errorPage.jsp ");
-			// redirect to errorPage  , then return to edit
+			System.out
+					.println(request.getParameter("calories") + " <--- not a number, forward to ----> errorPage.jsp ");
+			// redirect to errorPage , then return to edit
 			String url = "/errorPage.jsp";
 			request.getRequestDispatcher(url).forward(request, response);
-			  return;
+			return;
 		}
+//-------------------------
+		String description = request.getParameter("description");
 
 		Meal saveCreateMeal = new Meal(valueOfID,
- 	// <input type="datetime-local" value="${meal.dateTime }" name="dateTime">
+				// <input type="datetime-local" value="${meal.dateTime }" name="dateTime">
 				LocalDateTime.parse(request.getParameter("dateTime")),
-    // <input type="text" value="${meal.description }" name="description">						
-				request.getParameter("description"),
+				// <input type="text" value="${meal.description }" name="description">
+				description,
 
-				//Integer.valueOf(request.getParameter("calories")) 
+				// Integer.valueOf(request.getParameter("calories"))
 				// check user enter number if not to errorPage.jsp
-							valCalories
-				);
+				valCalories);
 
-		repository.save(saveCreateMeal);
+		if (!description.equals("")) {
+			repository.save(saveCreateMeal);
+		}
 		response.sendRedirect("Meals");
 	}
 }
