@@ -105,7 +105,7 @@ public class MealServlet extends HttpServlet {
 			request.getRequestDispatcher(url).forward(request, response);
 			return;
 		}
-//-------------------------
+//---------------changes1----------
 		String description = request.getParameter("description");
 
 		Meal saveCreateMeal = new Meal(valueOfID,
@@ -118,6 +118,7 @@ public class MealServlet extends HttpServlet {
 				// check user enter number if not to errorPage.jsp
 				valCalories);
 
+		// if getParameter("description") is empty, do nothing.
 		if (!description.equals("")) {
 			repository.save(saveCreateMeal);
 		}
