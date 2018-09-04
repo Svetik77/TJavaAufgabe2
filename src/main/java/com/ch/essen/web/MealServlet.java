@@ -61,6 +61,7 @@ public class MealServlet extends HttpServlet {
 				valueOfID = Integer.valueOf(id);
 			}
 			repository.delete(valueOfID);
+			response.sendRedirect("Meals");
 			// <input type="hidden" name="id" value="${meal.id }">
 			// if in method Post id = null, its mean create new Meal
 		} else {
