@@ -35,6 +35,7 @@
                 <td>${meal.description}</td>
                 <td>${meal.calories}</td>
                 <td> <a href="Meals?action=update&id=${meal.id }"> Update Meal </a> </td>
+                <td> <a href="Meals?action=delete&id=${meal.id }"> Delete Meal </a> </td>
             </tr>
         </c:forEach>
     </table>
