@@ -10,7 +10,10 @@
 </head>
 <body>
 <h3 style="color: blue;">myMealsList.jsp</h3>
+
+
 <section>
+    <h2><a href="index.html">Home</a></h2>
     <h2><a href="index.html">Home</a></h2>
     <h2>Meal list</h2>
     <!-- Servlet?(if action.equals("create"))  -->
