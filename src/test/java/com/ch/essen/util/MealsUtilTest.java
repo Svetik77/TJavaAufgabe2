@@ -2,6 +2,8 @@ package com.ch.essen.util;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.Month;
@@ -13,8 +15,11 @@ import org.junit.jupiter.api.Test;
 
 import com.ch.essen.model.Meal;
 import com.ch.essen.model.MealWithExceed;
+import org.slf4j.Logger;
+import static org.slf4j.LoggerFactory.getLogger;
 
 class MealsUtilTest {
+	private static final Logger LOG = getLogger(MealsUtilTest.class);
 	   public static final List<Meal> MEALS = Arrays.asList(
 	            new Meal(LocalDateTime.of(2015, Month.MAY, 30, 10, 0), "Завтрак", 500),
 	            new Meal(LocalDateTime.of(2015, Month.MAY, 30, 13, 0), "Обед", 1000),
@@ -46,7 +51,8 @@ class MealsUtilTest {
 	
 	@Test
 	void testcontainsAll() {
-		
+		LOG.info(" test info");
+		LOG.debug(" test debug");
 		assertTrue  (expectedList.containsAll (mealsWithExceededList  ));	
 	}
 	
@@ -56,14 +62,12 @@ class MealsUtilTest {
 	
 	}
 
-//	@Test
+ 	@Test
 	void testGetFilteredWithExceeded() {
-		fail("Not yet implemented");
 	}
 
-//	@Test
+ 	@Test
 	void testGetFilteredWithExceededByCycle() {
-		fail("Not yet implemented");
 	}
 
 }
